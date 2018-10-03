@@ -73,16 +73,24 @@
 	});
 
 	// CountTo
-	$('.counter').each(function() {
-		var $this = $(this);
-		var counter = new Waypoint({
-			element: $this,
-			handler: function()
-			{
-				$this.countTo();
-			},
-			offset: '95%'
+	var reachedCount = false;
+	var counterCount = 0;
+	var counterAmount = $('.counter').length;
+		$('.counter').each(function() {
+			var $this = $(this);
+			var counter = new Waypoint({
+				element: $this,
+				handler: function()
+				{
+					if(counterCount < counterAmount){
+						$this.countTo();
+						counterCount++;
+					}
+				
+				},
+				offset: '95%'
+			});
 		});
-	});
+		
 
 })(jQuery);
