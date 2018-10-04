@@ -336,7 +336,7 @@ textarea.input {
 }
 
 .estrategia_imagen {
-    width: 540px;
+    width: 499px;
 }
 
 .home-content .estrategia_imagen2 {
@@ -1153,7 +1153,7 @@ textarea.input {
 /* Custom Styles */
 
 #home {
-    min-height: 873px;
+    min-height: 933px;
 }
 
 #home .home-wrapper {
@@ -1184,6 +1184,55 @@ textarea.input {
     padding-top:120px;
 } */
 
+/* CountDown */
+
+#countdown{
+    /* position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #333;
+    user-select: none; */
+    margin-top:-25px;
+  }
+  
+  .ct_block{
+    display: inline-block;
+    /* height: 51px; */
+    
+    /* background: #008cd1; */
+    /* box-shadow: inset 0px 0px 10px #000; */
+    color: white;
+    padding: 12px;
+    
+    /* min-width: 84px; */
+}
+  
+  
+  .ct_value{
+    font-size: 21px;
+    position: relative;
+    font-weight: bold;
+    /* top: 50%; */
+    /* transform: translate(0%, -50%); */
+    text-shadow: 2px 2px 3px rgba(255,255,255,0.25);
+  }
+  
+  .ct_unit{
+    /*transform: translate(0%, -50%); */
+    /* position: relative; */
+    /* top: 24%; */
+    /* left: 0px; */
+    font-size: 13px;
+    text-shadow: 2px 2px 3px rgba(255,255,255,0.25);
+    /* padding-top: 17px; */
+  }
+  
+  .ct_row{
+    margin-bottom: 3px;
+  }
+
 @media only screen and (max-width: 991px) {
     .contact-social {
         text-align: center;
@@ -1197,7 +1246,7 @@ textarea.input {
 
 @media only screen and (max-width: 767px) {
     .home-content h1 {
-        font-size: 31px;
+        font-size: 26px;
     }
     .page-wrapper-content h1 {
         font-size: 31px;

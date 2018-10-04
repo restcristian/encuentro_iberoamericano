@@ -1,4 +1,4 @@
-(function($) {
+(function ($) {
 	"use strict"
 
 	// Scrollspy
@@ -8,18 +8,18 @@
 	});
 
 	// Mobile nav toggle
-	$('.navbar-toggle').on('click',function() {
+	$('.navbar-toggle').on('click', function () {
 		$('.main-nav').toggleClass('open');
 	});
 
 	// Fixed nav
-	$(window).on('scroll', function() {
+	$(window).on('scroll', function () {
 		var wScroll = $(this).scrollTop();
 		wScroll > 50 ? $('#header').addClass('fixed-navbar') : $('#header').removeClass('fixed-navbar');
 	});
 
 	// Smooth scroll
-	$(".main-nav a[href^='#']").on('click', function(e) {
+	$(".main-nav a[href^='#']").on('click', function (e) {
 		e.preventDefault();
 		var hash = this.hash;
 		$('html, body').animate({
@@ -28,17 +28,16 @@
 	});
 
 	// Section title animation
-	$('.section-title').each(function() {
+	$('.section-title').each(function () {
 		var $this = $(this);
-		$this.find('.title > span').each(function(i) {
+		$this.find('.title > span').each(function (i) {
 			var $span = $(this);
 			var animated = new Waypoint({
 				element: $this,
-				handler: function()
-				{
-					setTimeout(function(){
+				handler: function () {
+					setTimeout(function () {
 						$span.addClass('appear')
-					}, i*250);
+					}, i * 250);
 					this.destroy();
 				},
 				offset: '95%'
@@ -48,22 +47,22 @@
 
 	// Galery Owl
 	$('#galery-owl').owlCarousel({
-		items:1,
-		loop:true,
-		margin:0,
-		dots : false,
+		items: 1,
+		loop: true,
+		margin: 0,
+		dots: false,
 		nav: true,
-		navText : ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
-		autoplay : true,
-		autoplaySpeed :500,
-		navSpeed :500,
-		responsive : {
-	    0 : {
-	       stagePadding : 0,
-	    },
-	    768 : {
-	        stagePadding : 120,
-	    }
+		navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+		autoplay: true,
+		autoplaySpeed: 500,
+		navSpeed: 500,
+		responsive: {
+			0: {
+				stagePadding: 0,
+			},
+			768: {
+				stagePadding: 120,
+			}
 		}
 	});
 
@@ -76,21 +75,51 @@
 	var reachedCount = false;
 	var counterCount = 0;
 	var counterAmount = $('.counter').length;
-		$('.counter').each(function() {
-			var $this = $(this);
-			var counter = new Waypoint({
-				element: $this,
-				handler: function()
-				{
-					if(counterCount < counterAmount){
-						$this.countTo();
-						counterCount++;
-					}
-				
-				},
-				offset: '95%'
-			});
+	$('.counter').each(function () {
+		var $this = $(this);
+		var counter = new Waypoint({
+			element: $this,
+			handler: function () {
+				if (counterCount < counterAmount) {
+					$this.countTo();
+					counterCount++;
+				}
+
+			},
+			offset: '95%'
 		});
-		
+	});
+
+
 
 })(jQuery);
+
+$(document).ready(function () {
+	countdownInterval = setInterval(function () {
+		updateCountdown();
+	}, 1000);
+});
+
+function updateCountdown() {
+	timeNow = Date.now();
+	timeGoal = new Date("Oct 24, 2018 09:00:00").getTime();
+	distance = timeGoal - timeNow;
+
+	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+	if (distance <= 0) {
+		$(".ct_days").text("0");
+		$(".ct_hours").text("0");
+		$(".ct_minutes").text("0");
+		$(".ct_seconds").text("0");
+		clearInterval(countdownInterval);
+	} else {
+		$(".ct_days").text(days);
+		$(".ct_hours").text(hours);
+		$(".ct_minutes").text(minutes);
+		$(".ct_seconds").text(seconds);
+	}
+}
