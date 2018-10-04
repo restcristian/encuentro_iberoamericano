@@ -1150,6 +1150,40 @@ textarea.input {
 	RESPONSIVE
 ===========================================================*/
 
+/* Custom Styles */
+
+#home {
+    min-height: 873px;
+}
+
+#home .home-wrapper {
+    position: static;
+    position: static;
+    padding-top: 100px;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+}
+
+#video-modal-1 iframe{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    padding:25px;
+    /* height:auto; */
+}
+#video-modal-1 .modal-body{
+    position: relative;
+    width:100%;
+    padding-top:56.25%;
+}
+
+/* .home-content-col{
+    padding-top:120px;
+} */
+
 @media only screen and (max-width: 991px) {
     .contact-social {
         text-align: center;
@@ -1279,8 +1313,34 @@ textarea.input {
         overflow: hidden !important;
     }
     .estrategia_imagen {
-      width: 100% !important;
-      margin: 0 auto;
-      max-width: 440px;
+        width: 100% !important;
+        margin: 0 auto;
+        max-width: 440px;
+    }
+}
+
+@media(max-width:767px) {
+    .home-content-col {
+        position: static;
+    }
+    .home-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+    /* #home{
+        min-height:0;
+    }
+    #home .home-wrapper{
+        padding-top:120px;
+    } */
+}
+
+@media(max-width:460px) {
+    h3.event-title {
+        font-size: 16px;
     }
 }
