@@ -1249,6 +1249,10 @@ textarea.input {
     -webkit-appearance: none;
     appearance:none;
 }
+
+#mapid{
+    height:250px;
+}
 @media only screen and (max-width: 991px) {
     .contact-social {
         text-align: center;

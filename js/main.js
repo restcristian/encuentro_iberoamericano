@@ -122,6 +122,22 @@ $(document).ready(function () {
 
 	});
 
+	var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+
+	var accessToken = "pk.eyJ1IjoiY3Jlc3RpdHV5byIsImEiOiJjam12YmhtZmsycjBoM3BxY3o5MHp3anVoIn0._R3aMTesieiXelfDWKFV2Q"
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=' + accessToken, {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+
+	L.marker([51.5, -0.09]).addTo(mymap)
+		.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+
+
 
 });
 
