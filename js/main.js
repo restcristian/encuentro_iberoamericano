@@ -96,7 +96,7 @@
 
 $(document).ready(function () {
 	var currentSpeakersToShow = $('.speaker:not(.not-shown)').length;
-	var bySpeakers = 4;
+	var bySpeakers = 12;
 
 
 	countdownInterval = setInterval(function () {
