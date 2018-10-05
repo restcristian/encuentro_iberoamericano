@@ -1253,6 +1253,9 @@ textarea.input {
     -webkit-appearance: none;
     appearance:none;
 }
+.leaflet-popup-content{
+    color:#f7941e;
+}
 
 #mapid{
     height:250px;
