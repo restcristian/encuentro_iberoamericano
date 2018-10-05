@@ -1245,6 +1245,10 @@ textarea.input {
     /* transform:scale(0); */
    /* display: none; */
 }
+.viewButtonContainer{
+    clear: both;
+    display: block;
+}
 #viewButton{
     -webkit-appearance: none;
     appearance:none;
