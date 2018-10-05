@@ -104,7 +104,7 @@ $(document).ready(function () {
 
 	$("#viewButton").click(function () {
 
-		var speakersToBeAffected = $('.speaker').slice(currentSpeakersToShow, currentSpeakersToShow + bySpeakers + 1);
+		var speakersToBeAffected = $('.speaker').slice(currentSpeakersToShow, currentSpeakersToShow + bySpeakers);
 		var delay = 100;
 		var initialDuration = 500;
 		currentSpeakersToShow += bySpeakers;
