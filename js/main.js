@@ -95,9 +95,34 @@
 })(jQuery);
 
 $(document).ready(function () {
+	var currentSpeakersToShow = 3;
+	var bySpeakers = 3;
+
 	countdownInterval = setInterval(function () {
 		updateCountdown();
 	}, 1000);
+
+	$("#viewButton").click(function () {
+
+		var speakersToBeAffected = $('.speaker').slice(currentSpeakersToShow, currentSpeakersToShow + bySpeakers + 1);
+		var delay = 100;
+		var initialDuration = 500;
+		currentSpeakersToShow += bySpeakers;
+		Array.from(speakersToBeAffected).forEach(function (item, idx) {
+
+			var imageNode = $(item).children('.speaker-img').children();
+			$(imageNode).attr("src", $(imageNode).data('sourceimage'));
+
+			$(imageNode).load(function () {
+				$(item).css("display", "block");
+				$(item).animate({ opacity: 1 }, initialDuration).delay(delay += 100);
+			});
+
+		});
+
+	});
+
+
 });
 
 function updateCountdown() {

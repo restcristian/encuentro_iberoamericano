@@ -554,7 +554,7 @@ textarea.input {
 
 .speaker .speaker-content {
     position: relative;
-    padding: 30px;
+    padding: 14px;
     background: #f7941e;
     text-align: right;
     z-index: 20;
@@ -562,10 +562,13 @@ textarea.input {
 
 .speaker .speaker-content>h2 {
     color: #FFF;
+    font-size:18px;
+    margin-bottom:2px;
 }
 
 .speaker .speaker-content>span {
     color: #fff;
+    font-size: 13px;
 }
 
 .speaker .speaker-social {
@@ -1165,19 +1168,20 @@ textarea.input {
     transform: none;
 }
 
-#video-modal-1 iframe{
+#video-modal-1 iframe {
     position: absolute;
-    top:0;
-    left:0;
-    width:100%;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    padding:25px;
+    padding: 25px;
     /* height:auto; */
 }
-#video-modal-1 .modal-body{
+
+#video-modal-1 .modal-body {
     position: relative;
-    width:100%;
-    padding-top:56.25%;
+    width: 100%;
+    padding-top: 56.25%;
 }
 
 /* .home-content-col{
@@ -1186,7 +1190,7 @@ textarea.input {
 
 /* CountDown */
 
-#countdown{
+#countdown {
     /* position: absolute;
     left: 50%;
     top: 50%;
@@ -1194,45 +1198,57 @@ textarea.input {
     text-align: center;
     color: #333;
     user-select: none; */
-    margin-top:-25px;
-  }
-  
-  .ct_block{
+    margin-top: -25px;
+}
+
+.ct_block {
     display: inline-block;
     /* height: 51px; */
-    
     /* background: #008cd1; */
     /* box-shadow: inset 0px 0px 10px #000; */
     color: white;
     padding: 12px;
-    
     /* min-width: 84px; */
 }
-  
-  
-  .ct_value{
+
+.ct_value {
     font-size: 21px;
     position: relative;
     font-weight: bold;
     /* top: 50%; */
     /* transform: translate(0%, -50%); */
-    text-shadow: 2px 2px 3px rgba(255,255,255,0.25);
-  }
-  
-  .ct_unit{
+    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.25);
+}
+
+.ct_unit {
     /*transform: translate(0%, -50%); */
     /* position: relative; */
     /* top: 24%; */
     /* left: 0px; */
     font-size: 13px;
-    text-shadow: 2px 2px 3px rgba(255,255,255,0.25);
+    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.25);
     /* padding-top: 17px; */
-  }
-  
-  .ct_row{
-    margin-bottom: 3px;
-  }
+}
 
+.ct_row {
+    margin-bottom: 3px;
+}
+
+.speaker{
+    opacity: 1;
+    /* transition:opacity 10s ease-in-out, visibility .2s ease-in-out; */
+}
+
+.not-shown {
+    display: none;
+    opacity:0;
+    /* transform:scale(0); */
+   /* display: none; */
+}
+#viewButton{
+    -webkit-appearance: none;
+    appearance:none;
+}
 @media only screen and (max-width: 991px) {
     .contact-social {
         text-align: center;
