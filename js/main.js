@@ -95,8 +95,9 @@
 })(jQuery);
 
 $(document).ready(function () {
-	var currentSpeakersToShow = 3;
-	var bySpeakers = 3;
+	var currentSpeakersToShow = $('.speaker:not(.not-shown)').length;
+	var bySpeakers = 4;
+
 
 	countdownInterval = setInterval(function () {
 		updateCountdown();
@@ -108,21 +109,25 @@ $(document).ready(function () {
 		var delay = 100;
 		var initialDuration = 500;
 		currentSpeakersToShow += bySpeakers;
+
+		console.log(speakersToBeAffected);
 		Array.from(speakersToBeAffected).forEach(function (item, idx) {
 
 			var imageNode = $(item).children('.speaker-img').children();
-			$(imageNode).attr("src", $(imageNode).data('sourceimage'));
-
+			if ($(imageNode).attr("src").trim() === "") {
+				$(imageNode).attr("src", $(imageNode).data('sourceimage'));
+			}
 			$(imageNode).load(function () {
 				$(item).css("display", "block");
 				$(item).animate({ opacity: 1 }, initialDuration).delay(delay += 100);
 			});
 
+
 		});
 
 	});
 
-	var mymap = L.map('mapid').setView([18.4746017,-69.9126833,15], 15);
+	var mymap = L.map('mapid').setView([18.4746017, -69.9126833, 15], 15);
 
 	var accessToken = "pk.eyJ1IjoiY3Jlc3RpdHV5byIsImEiOiJjam12YmhtZmsycjBoM3BxY3o5MHp3anVoIn0._R3aMTesieiXelfDWKFV2Q"
 
@@ -136,11 +141,11 @@ $(document).ready(function () {
 
 	// 18.473807,-69.9155957,17
 
-	L.marker([18.4746017,-69.9126833,15]).addTo(mymap)
+	L.marker([18.4746017, -69.9126833, 15]).addTo(mymap)
 		.bindPopup("<b>Hotel Barcelo</b>").openPopup();
-	
-		
-	L.marker([18.473807,-69.9155957,17]).addTo(mymap)
+
+
+	L.marker([18.473807, -69.9155957, 17]).addTo(mymap)
 		.bindPopup("<b>UNAPEC</b>").openPopup();
 
 

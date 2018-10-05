@@ -1252,6 +1252,7 @@ textarea.input {
 #viewButton{
     -webkit-appearance: none;
     appearance:none;
+    outline: none;
 }
 .leaflet-popup-content{
     color:#f7941e;
@@ -1259,6 +1260,10 @@ textarea.input {
 
 #mapid{
     height:250px;
+}
+.speaker-col{
+    width:25%;
+    float:left;
 }
 @media only screen and (max-width: 991px) {
     .contact-social {
@@ -1269,8 +1274,25 @@ textarea.input {
         display: block;
         text-align: center;
     }
+
+    .speaker-col{
+        width:33.33333333%;
+    }
+}
+@media(max-width:624px){
+    .speaker-col{
+        width:50%;
+    }
 }
 
+@media(max-width:440px){
+    .speaker-col{
+        width:100%;
+        float:none;
+        max-width:275px;
+        margin:0 auto;
+    }
+}
 @media only screen and (max-width: 767px) {
     .home-content h1 {
         font-size: 26px;
