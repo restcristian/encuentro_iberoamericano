@@ -122,7 +122,7 @@ $(document).ready(function () {
 
 	});
 
-	var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+	var mymap = L.map('mapid').setView([18.4746017,-69.9126833,15], 15);
 
 	var accessToken = "pk.eyJ1IjoiY3Jlc3RpdHV5byIsImEiOiJjam12YmhtZmsycjBoM3BxY3o5MHp3anVoIn0._R3aMTesieiXelfDWKFV2Q"
 
@@ -134,8 +134,15 @@ $(document).ready(function () {
 		id: 'mapbox.streets'
 	}).addTo(mymap);
 
-	L.marker([51.5, -0.09]).addTo(mymap)
-		.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+	// 18.473807,-69.9155957,17
+
+	L.marker([18.4746017,-69.9126833,15]).addTo(mymap)
+		.bindPopup("<b>Hotel Barcelo</b>").openPopup();
+	
+		
+	L.marker([18.473807,-69.9155957,17]).addTo(mymap)
+		.bindPopup("<b>UNAPEC</b>").openPopup();
+
 
 
 
